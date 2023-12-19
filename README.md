@@ -1,1 +1,2 @@
 gail7.py和gail8.py为最终版本
+gail7有边框但是gail8没有边框
