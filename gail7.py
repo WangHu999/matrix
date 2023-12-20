@@ -85,5 +85,4 @@ original_matrix = np.array([[complex(j) for j in input().split()] for _ in range
 # 调用分离盖尔圆的函数并画图
 separate_gershgorin_circles(original_matrix, row_diagonal_matrix, column_diagonal_matrix)
 
-
-
+#
