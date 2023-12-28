@@ -11,7 +11,8 @@ def separate_gershgorin_circles(original_matrix, row_diagonal_matrix, column_dia
     separated_row_matrix = np.dot(row_diagonal_matrix, np.dot(original_matrix, np.linalg.inv(row_diagonal_matrix)))
 
     # 分离列盖尔圆
-    separated_column_matrix = np.dot(np.linalg.inv(column_diagonal_matrix), np.dot(original_matrix, column_diagonal_matrix))
+    separated_column_matrix = np.dot(np.linalg.inv(column_diagonal_matrix),
+                                     np.dot(original_matrix, column_diagonal_matrix))
 
     # 求解特征值
     eigenvalues_original, _ = np.linalg.eig(original_matrix)
@@ -26,13 +27,16 @@ def separate_gershgorin_circles(original_matrix, row_diagonal_matrix, column_dia
     plot_gershgorin_circles(original_matrix, axes[0, 0], title="原始矩阵的行盖尔圆", eigenvalues=eigenvalues_original)
 
     # 画出分离后的行盖尔圆和特征值
-    plot_gershgorin_circles(separated_row_matrix, axes[0, 1], title="分离后的行盖尔圆", eigenvalues=eigenvalues_separated_row)
+    plot_gershgorin_circles(separated_row_matrix, axes[0, 1], title="分离后的行盖尔圆",
+                            eigenvalues=eigenvalues_separated_row)
 
     # 画出原始矩阵的列盖尔圆和特征值
-    plot_gershgorin_circles(original_matrix.T, axes[1, 0], title="原始矩阵的列盖尔圆", eigenvalues=eigenvalues_original_T)
+    plot_gershgorin_circles(original_matrix.T, axes[1, 0], title="原始矩阵的列盖尔圆",
+                            eigenvalues=eigenvalues_original_T)
 
     # 画出分离后的列盖尔圆和特征值
-    plot_gershgorin_circles(separated_column_matrix.T, axes[1, 1], title="分离后的列盖尔圆", eigenvalues=eigenvalues_separated_column)
+    plot_gershgorin_circles(separated_column_matrix.T, axes[1, 1], title="分离后的列盖尔圆",
+                            eigenvalues=eigenvalues_separated_column)
 
     # 调整布局，使子图之间有一些间隔
     plt.tight_layout()
@@ -84,5 +88,6 @@ original_matrix = np.array([[complex(j) for j in input().split()] for _ in range
 
 # 调用分离盖尔圆的函数并画图
 separate_gershgorin_circles(original_matrix, row_diagonal_matrix, column_diagonal_matrix)
-
 #
+
+# 测试提交
